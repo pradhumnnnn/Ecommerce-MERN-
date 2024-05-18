@@ -1,0 +1,52 @@
+Import necessary CSS file
+Import Navbar component
+Import BrowserRouter, Route, Routes from react-router-dom
+Import Shop page
+Import ShopCategory page
+Import Product page
+Import Cart page
+Import LoginSignUp page
+Import Footer component
+Import banners for men, women, and kids
+Import loadStripe from @stripe/stripe-js
+Import Elements from @stripe/react-stripe-js
+Import CheckoutForm
+
+Initialize stripePromise with loadStripe and your publishable key
+
+Function App:
+    Return:
+        Div element:
+            BrowserRouter:
+                Navbar component
+
+                Routes:
+                    Route for path '/':
+                        Render Shop page
+
+                    Route for path '/mens':
+                        Render ShopCategory page with men_banner and category "men"
+
+                    Route for path '/womens':
+                        Render ShopCategory page with women_banner and category "women"
+
+                    Route for path '/kids':
+                        Render ShopCategory page with kid_banner and category "kid"
+
+                    Route for path '/product':
+                        Render Product page
+                        Nested Route for path ':productId':
+                            Render Product page
+
+                    Route for path '/cart':
+                        Render Cart page
+
+                    Route for path '/login':
+                        Render LoginSignUp page
+
+                Footer component
+
+                Elements with stripePromise:
+                    CheckoutForm component
+
+Export App

@@ -10,6 +10,11 @@ import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import CheckoutForm from './CheckoutForm';
+
+const stripePromise = loadStripe('your_publishable_key');
 
 
 function App() {
@@ -31,6 +36,9 @@ function App() {
         <Route path='/login' element={<LoginSignUp />} />
       </Routes>
       <Footer />
+      <Elements stripe={stripePromise}>
+    <CheckoutForm />
+  </Elements>
 
       </BrowserRouter>
     </div>
